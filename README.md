@@ -33,3 +33,12 @@ infrastructure as code, and cloud deployment.
 ## Fun Fact
 
 I draw both digitally and traditionally in my free time, and recently I've taken up designing tattoos for me and my friends/coworkers.
+
+
+## My Week 2 Infrastructure
+
+Runner VM: Tobias-runner
+
+Runner IP: 192.168.1.115
+
+Pipeline status: [![Hello Pipeline](https://github.com/tobyenglish/cis-410-cybersecurity-automation/actions/workflows/hello-pipeline.yml/badge.svg)](https://github.com/tobyenglish/cis-410-cybersecurity-automation/actions/workflows/hello-pipeline.yml)
