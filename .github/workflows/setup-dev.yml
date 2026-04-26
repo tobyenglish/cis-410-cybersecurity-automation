@@ -82,10 +82,6 @@ jobs:
 
       - name: Configure passwordless sudo
 
-        env:
-          SUDO_PASS: ${{ secrets.SUDO_PASS }}
-          DEV_USER: ${{ secrets.DEV_USER }}
-
         run: |
 
           echo "${{ secrets.DEV_SSH_KEY }}" > /tmp/deploy_key
@@ -107,9 +103,9 @@ jobs:
 
               echo '=== Configuring passwordless sudo ==='
 
-              echo '$SUDO_PASS' | sudo -S bash -c \
+              echo '${{ secrets.SUDO_PASS }}' | sudo -S bash -c \
 
-                'echo \"$DEV_USER ALL=(ALL) NOPASSWD:ALL\" > /etc/sudoers.d/$DEV_USER && chmod 0440 /etc/sudoers.d/$DEV_USER'
+                'echo \"${{ secrets.DEV_USER }} ALL=(ALL) NOPASSWD:ALL\" > /etc/sudoers.d/${{ secrets.DEV_USER }} && chmod 0440 /etc/sudoers.d/${{ secrets.DEV_USER }}'
 
               echo '=== Passwordless sudo configured ==='
 
